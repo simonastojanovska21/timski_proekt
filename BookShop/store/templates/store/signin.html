@@ -1,0 +1,17 @@
+{% extends 'store/base.html' %}
+{% load customfunction %}
+{% block container %}
+
+    <div class="m-5">
+        <form method = 'post'>
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type = "submit" value = "Submit">
+        </form>
+
+        <h3>Dont have an account??</h3><br>
+        <a href = "{% url 'store:signup' %}">SignUp Here</a>
+
+    </div>
+
+{% endblock %}

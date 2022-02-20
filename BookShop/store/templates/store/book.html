@@ -1,0 +1,79 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load customfunction %}
+{% block container %}
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="row">
+						<div class="col-sm-3">
+							<div class="grid-item">
+								<div class="view-details" style="cursor:pointer">
+									<img id="product_image" class="lookInsideImg" src="{{ book.coverpage.url }}" alt="">
+								</div>
+							</div>	
+							<div class="lookInsideDiv" style="display: none;">
+								<div class="exitBtn"></div>
+								<div class="pagesArea">
+									<ul class="list-unstyled pages">
+										<li><img src="{{ book.bookpage.url }}" alt=""></li>
+									</ul>
+								</div>
+							</div>				
+						</div>
+						
+						<div class="col-sm-6">
+							<div class="product-information">
+								<h4>{{ book.name }}</h4>
+								<p style="margin: 0">by <a style="font-weight:bold" href="{% url 'store:writer' id=book.writer.id %}">{{ book.writer }}</a></p>
+								
+								<article class="text-justify" style="margin-top:10px;">
+									{{ book.description }}
+								</article>
+
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="pricebox">
+								<p>Price: Tk. <span> {{ book.price }}</span></p>
+								<button class="btn btn-warning" id="addTocart" data-book-id="{{ book.id }}">
+									<i class="fa fa-shopping-cart"></i>Add to cart
+								</button>
+							</div>
+						</div>
+					</div>	
+				</div>
+
+			    
+				   	{% csrf_token %}
+
+
+					</div>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+<script type="text/javascript">
+	$(document).on('ready', function() {
+		$(document).on('click', '.lookInsideImg,.lookInsideBg', function () {
+			$('div.overlay').fadeIn(500);
+			$('div.lookInsideDiv').fadeIn(500);
+		});
+	   
+	   $(document).on('click', 'div.lookInsideDiv div.exitBtn', function () {
+			$('div.overlay').fadeOut(500);
+			$('div.lookInsideDiv').fadeOut(500);
+			refCaro($('#bookDR99'));
+		});
+		$(document).on('click', 'div.overlay', function () {
+			$('div.overlay').fadeOut(500);
+			$('div.lookInsideDiv').fadeOut(500);
+			refCaro($('#bookDR99'));
+			return false
+		});	
+	});
+</script>
+
+{% endblock %}
