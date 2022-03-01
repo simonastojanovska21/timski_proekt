@@ -8,7 +8,7 @@
 			<div class="col-md-12">
 				<div class="responsive categorymenu">
 					{% for p in cat %}
-					<div class="cat-wrapper">
+					<div class="cat-wrapper category-{{ p.id }}">
 						<div class="text-center">
 							<a href="{% url 'store:category' id=p.id %}"><img src="{{ p.icon.url }}" alt=""/></a>
 							<a href="{% url 'store:category' id=p.id %}">{{ p.name }}</a>
@@ -31,7 +31,7 @@
 	</div>
 	
 		{% for item in newbooks %}
-		<div class="book-wrapper text-center">
+		<div class="book-wrapper text-center book-{{ item.id }}">
 			
 			<div class="coverpage">
 				<img src="{{ item.coverpage.url }}" alt=""/>
