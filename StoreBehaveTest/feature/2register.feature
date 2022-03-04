@@ -1,4 +1,4 @@
-# Created by Simona 10 scenarios
+# Created by Simona 18 scenarios
 Feature: Registering new user
   Online book shop enables user to register
 
@@ -22,6 +22,7 @@ Feature: Registering new user
     And I add "P@ssword1" to the inputfield "#id_password2"
     And I submit the form "#registerForm"
     Then I expect that the url is "http://127.0.0.1:8000/"
+    Then I open the url "http://127.0.0.1:8000/logout"
     
   Scenario: Logged in user tries to register
     Given I am logged in to the system

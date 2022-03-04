@@ -24,8 +24,8 @@
 						
 						<div class="col-sm-6">
 							<div class="product-information">
-								<h4>{{ book.name }}</h4>
-								<p style="margin: 0">by <a style="font-weight:bold" href="{% url 'store:writer' id=book.writer.id %}">{{ book.writer }}</a></p>
+								<h4 class="bookTitle">{{ book.name }}</h4>
+								<p style="margin: 0">by <a class="author" style="font-weight:bold" href="{% url 'store:writer' id=book.writer.id %}">{{ book.writer }}</a></p>
 								
 								<article class="text-justify" style="margin-top:10px;">
 									{{ book.description }}

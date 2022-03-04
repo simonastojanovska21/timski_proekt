@@ -1,4 +1,4 @@
-# Created by Simona
+# Created by Simona 10 scenarios
 Feature: Logging user
   Online book shop enables user to login to the system
 
@@ -10,17 +10,27 @@ Feature: Logging user
     |#id_username|
     |#id_password|
 
-  Scenario: User is on the login page and enters the data for successful registration
+  Scenario: User is on the login page and enters the data for successful login
     Given I open the url "http://127.0.0.1:8000/login"
     When I add "admin@admin.com" to the inputfield "#id_username"
     And I add "P@ssword1" to the inputfield "#id_password"
     And I submit the form "#loginForm"
     Then I expect that the url is "http://127.0.0.1:8000/"
+    Then I open the url "http://127.0.0.1:8000/logout"
+
+  Scenario: User is on the login page and can log in by pressing Enter after typing in the credentials.
+    Given I open the url "http://127.0.0.1:8000/login"
+    When I add "admin@admin.com" to the inputfield "#id_username"
+    And I add "P@ssword1" to the inputfield "#id_password"
+    And I press "enter"
+    Then I expect that the url is "http://127.0.0.1:8000/"
+    Then I open the url "http://127.0.0.1:8000/logout"
 
   Scenario: User is already logged in and tries to login again
     Given I am logged in to the system
     When I open the url "http://127.0.0.1:8000/login"
     Then I expect that the url is "http://127.0.0.1:8000/"
+    Then I open the url "http://127.0.0.1:8000/logout"
 
   Scenario: User tries to login with wrong username
     Given I open the url "http://127.0.0.1:8000/login"

@@ -9,4 +9,4 @@ def seeListOfBooks(context, book):
 
 @then('I expect the category "{category}" to be shown')
 def seeListOfCategories(context, category):
-    assert context.behave_driver.element_visible('.category-' + category)
+    assert context.behave_driver.element_exists('.category-' + category)
