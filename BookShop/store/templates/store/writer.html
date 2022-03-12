@@ -9,7 +9,7 @@
 						<div class="col-sm-3">
 							<div class="grid-item">
 								<div class="view-details" style="cursor:pointer">
-									<img id="product_image" class="lookInsideImg" src="{{ wrt.pic.url }}" alt="">
+									<img id="writer_image" class="lookInsideImg" src="{{ wrt.pic.url }}" alt="">
 								</div>
 							</div>
 							<div class="lookInsideDiv" style="display: none;">
@@ -24,10 +24,10 @@
 
 						<div class="col-sm-6">
 							<div class="product-information">
-								<h4>{{ wrt.name }}</h4>
+								<h4 class="bookName">{{ wrt.name }}</h4>
 
 
-								<article class="text-justify" style="margin-top:10px;">
+								<article class="biography text-justify" style="margin-top:10px;">
 									{{ wrt.bio }}
 								</article>
 

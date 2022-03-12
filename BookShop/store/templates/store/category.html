@@ -4,7 +4,7 @@
 			<div class="row">
 				{% for item in book %}
 				<div class = 'col-sm-3'>
-					<div class="book-wrapper text-center">
+					<div class="book-wrapper text-center book-{{ item.id }}">
 						<div class="coverpage">
 							<img src="{{ item.coverpage.url }}" alt=""/>
 						</div>
@@ -60,7 +60,7 @@
 			    </ul>
 			</div>
 			{% else %}
-			<h3 class="text-center mt-5">There are no books Found.</h3>
+			<h3 class="text-center mt-5" id="noBooks">There are no books Found.</h3>
 			{% endif %}	
 
 {% endblock %}

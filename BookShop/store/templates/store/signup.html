@@ -3,14 +3,14 @@
 {% block container %}
 
     <div class="m-5">
-        <form method ='post'>
+        <form method ='post' id="registerForm">
             {% csrf_token %}
             {{form.as_p}}
             <input type="submit" value = "Submit">
         </form>
 
         <h3>Already Have an Account??</h3>
-        <a href = "{% url 'store:signin' %}">Sign In Here</a>
+        <a id="signIn" href = "{% url 'store:signin' %}">Sign In Here</a>
     </div>
 
 {% endblock %}
