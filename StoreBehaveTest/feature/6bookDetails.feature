@@ -1,4 +1,4 @@
-# Created by Simona 5 scenarios
+# Created by Simona 6 scenarios
 Feature: Details about a book
   User can view the details about a book
 
@@ -31,4 +31,6 @@ Feature: Details about a book
     When I click on the element ".book-1 a:nth-child(2)"
     Then I expect that the url is "http://127.0.0.1:8000/book/1"
 
-
+  Scenario: User tries to access book details page with invalid id
+    Given I open the url "http://127.0.0.1:8000/book/55"
+    Then I expect that element ".exception_value" contains the text "No Book matches the given query."

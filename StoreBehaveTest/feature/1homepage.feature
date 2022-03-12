@@ -1,4 +1,4 @@
-# Created by Simona 12 scenarios
+# Created by Simona 35 scenarios
 Feature: Home page of the web application
   After starting of the application there should be displayed a list of 15 most recent books
 

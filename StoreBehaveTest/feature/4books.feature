@@ -31,7 +31,7 @@ Feature: List of books
     When I click on the element ".pagination li:nth-child(2)"
     Then I expect that the url is "http://127.0.0.1:8000/books?page=1"
 
-  Scenario: User should be able to navigate between pages, from 1 page to first page
+  Scenario: User should be able to navigate between pages, from 2 page to first page
     Given I open the url "http://127.0.0.1:8000/books?page=2"
     When I click on the element ".pagination li:nth-child(1)"
     Then I expect that the url is "http://127.0.0.1:8000/books?page=1"

@@ -1,4 +1,4 @@
-# Created by Simona 3 scenarios
+# Created by Simona 4 scenarios
 Feature: Details about a book
   User can view the details about a book
 
@@ -17,3 +17,7 @@ Feature: Details about a book
     Given I open the url "http://127.0.0.1:8000/category/2"
     When I click on the element ".book-5 a:nth-child(3)"
     Then I expect that the url is "http://127.0.0.1:8000/writer/18"
+
+  Scenario: User tries to access author details page with invalid id
+    Given I open the url "http://127.0.0.1:8000/writer/66"
+    Then I expect that element ".exception_value" contains the text "No Writer matches the given query."

@@ -1,4 +1,4 @@
-# Created by Simona 18 scenarios
+# Created by Simona 19 scenarios
 Feature: Registering new user
   Online book shop enables user to register
 
@@ -12,6 +12,7 @@ Feature: Registering new user
     |#id_username |
     |#id_password1|
     |#id_password2|
+    |#registerForm input[type=text]|
 
   Scenario: User is on the register page and enters the data for successful registration
     Given I open the url "http://127.0.0.1:8000/registration"
