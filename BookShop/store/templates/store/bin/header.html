@@ -21,14 +21,14 @@
 				<div class="pull-right">
 					<ul class="navbar-nav">
 
-					    <li class="cart">
+					    <li class="cart" id="shoppingCart">
 					    	<a href="{% url 'cart:cart_details' %}">Cart <i class="fa fa-angle-left"></i>
 					    		<span class="totalcart" id="gettotalcart"> {{ cart|length }} </span> 
 					    		<i class="fa fa-angle-right"></i>
 					    	</a>
 					    </li>
 
-					 <li class="cart">
+					 <li class="cart" id="books">
 						<a href="{% url 'store:books' %}"><i class="fa fa-angle-right"></i> All Books</a>
 
 					 </li>
